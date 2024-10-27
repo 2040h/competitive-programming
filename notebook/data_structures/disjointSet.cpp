@@ -10,8 +10,7 @@ struct DisjointSet{
     }
 
     ll findSet(ll x){
-        if(parent[x]==x) return x;
-        parent[x] = findSet(parent[x]);
+        if(parent[x]!=x) {parent[x] = findSet(parent[x]);}
         return parent[x];
     }
 
