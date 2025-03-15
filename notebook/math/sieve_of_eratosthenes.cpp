@@ -1,14 +1,15 @@
-// Guarda en primes los numeros primos menores o iguales a MX. Para saber si p es un numero primo, hacer: if (!marked[p]).
+// O(MAX_N log(log(MAX_N)))
 
-const int MX = 1e6;
-bool marked[MX+1];
-vector<int> primes;
-// O(MX log(log(MX)))
-void sieve() {
-    marked[0] = marked[1] = true;
-    for (int i = 2; i <= MX; i++) {
-        if (marked[i]) continue;
-        primes.pb(i);
-        for (ll j = 1ll*i*i; j <= MX; j += i) marked[j] = true;
-    }
+const ll COTA_SUP_N = 110000;
+vector<bool> is_prime(COTA_SUP_N+1, true);
+ 
+void sieveOfEratosthenes(){
+	is_prime[0] = false;
+	is_prime[1] = false;
+	for (ll i = 2; i <= COTA_SUP_N; i++) {
+		if (is_prime[i]) {
+			for (ll j = i*i; j <= COTA_SUP_N; j += i)
+				is_prime[j] = false;
+		}
+	}
 }
