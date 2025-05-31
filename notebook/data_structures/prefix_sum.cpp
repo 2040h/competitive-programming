@@ -36,7 +36,7 @@ struct PrefixSum3D {
 		n = SIZE(mat); m = SIZE(mat[0]); l = SIZE(mat[0][0]);
 		prefix.assign(n+1, vector<vector<int>>(m+1, vector<int>(l+1, 0)));
 		forn(i, n) forn(j, m) forn(k, l) {
-            prefix[i+1][j+1][k+1] = prefix[i+1][j+1][k] + prefix[i+1][j][k+1] + prefix[i][j+1][k+1] - prefix[i+1][j][k] - prefix[i][j+1][k] - prefix[i][j][k+1] + prefix[i][j][k] + mat[i][j][k];
+			prefix[i+1][j+1][k+1] = prefix[i+1][j+1][k] + prefix[i+1][j][k+1] + prefix[i][j+1][k+1] - prefix[i+1][j][k] - prefix[i][j+1][k] - prefix[i][j][k+1] + prefix[i][j][k] + mat[i][j][k];
 		}
 	}
     
