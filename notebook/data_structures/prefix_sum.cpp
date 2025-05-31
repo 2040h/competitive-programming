@@ -37,7 +37,7 @@ struct PrefixSum3D {
 		prefix.assign(n+1, vector<vector<int>>(m+1, vector<int>(l+1, 0)));
 		forn(i, n) forn(j, m) forn(k, l) {
             prefix[i+1][j+1][k+1] = prefix[i+1][j+1][k] + prefix[i+1][j][k+1] + prefix[i][j+1][k+1] - prefix[i+1][j][k] - prefix[i][j+1][k] - prefix[i][j][k+1] + prefix[i][j][k] + mat[i][j][k];
-        }
+		}
 	}
     
 	int get_range_sum(int x1, int y1, int z1, int x2, int y2, int z2) const {
