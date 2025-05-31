@@ -40,10 +40,10 @@ struct BinaryJumping{
 // #############################################################################################################
 // Implementación alternativa
 
-vector<vector<int>> memoAncestors(n, vector<int>(log2(n)+1, UNDEFINED));
+vector<vector<int>> memoAncestors(SIZE(adjList), vector<int>(log2(SIZE(adjList))+1, UNDEFINED));
 
 void precomputeAncestors(int root, vector<vector<int>> &adjList, vector<vector<int>> &memoAncestors, vector<bool> &visited){
-    int k = (int) log2(n)+1;
+    int k = (int) log2(SIZE(adjList))+1;
     visited[root] = true;
 
     queue<int> toVisit;
