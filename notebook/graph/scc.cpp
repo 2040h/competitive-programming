@@ -12,7 +12,7 @@ struct SCC {
 		vis.assign(n, false);
 		id_scc.resize(n);
 		
-		for(int i=0; i<n; i++){
+		forn(i, n){
 			if(!vis[i]) { dfs1(i); }
 		}
 		vis.assign(n, false);
@@ -26,7 +26,7 @@ struct SCC {
 		}
 	}
 	
-	vector<vi> sccToDAG(){
+	vector<vi> sccToDAG(){  // (Opcional)
 		vector<set<int>> ady_dag_with_set(comps);
 		forn(v, n){
 			for(int u : ady[v]){
@@ -48,7 +48,7 @@ private:
 		for(int u : ady[v]) {
 			if (!vis[u]) { dfs1(u); }
 		}
-		order.push_back(v);
+		order.pb(v);
 	}
     
 	void dfs2(int x, int comp) {
