@@ -30,14 +30,14 @@ struct SCC {
 		vector<set<int>> ady_dag_with_set(comps);
 		forn(v, n){
 			for(int u : ady[v]){
+				if(id_scc[v] == id_scc[u]) {continue;}  // Evita self-loops.
 				ady_dag_with_set[id_scc[v]].insert(id_scc[u]);
 			}
 		}
 		// Convertir a vector de vector de int.
-		vector<vi> ady_dag;
-		for(const auto &s : ady_dag_with_set){
-			vi tmp(all(s));
-			ady_dag.pb(tmp);
+		vector<vi> ady_dag(comps);
+		forn(i, comps){
+			ady_dag[i] = vi(all(ady_dag_with_set[i]));
 		}
 		return ady_dag;
 	}
