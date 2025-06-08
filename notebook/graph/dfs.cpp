@@ -1,3 +1,5 @@
+// Algoritmos para Grafos simples
+
 void dfs(int v){
     visited[v] = true;
     for (int u : adjList[v]){
@@ -20,7 +22,10 @@ int findCycle(int v){
     return UNDEFINED;
 }
 
-// Idem anterior, pero para grafo dirigido. Acá devolvemos ciclos de longitud 2
+// ###########################################################################
+// Algoritmos para grafos dirigidos
+
+// Acá devuelve ciclos de longitud 2
 int findCycle(int v){
     visited[v] = VISITANDO;
     
@@ -35,3 +40,4 @@ int findCycle(int v){
     visited[v] = VISITADO;
     return UNDEFINED;
 }
+
