@@ -1,5 +1,5 @@
 struct Graph {
-    int n;
+    int m;
     vector<bool> visited;
     vector<vector<int>> adjList;
     vector<int> parent;

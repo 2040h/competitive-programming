@@ -8,18 +8,20 @@ void dfs(int v){
     }
 }
 
-// Devuelve vértice en el que empieza un ciclo. Si no encuentra ninguno, retorna UNDEFINED
-// Llamarla ya habiendo definido los padres
-int findCycle(int v){
+bool findCycle(int v){
     visited[v] = true;
     for (int u : adjList[v]){
         if (u == parent[v]) continue; 
-        if (visited[u]) return u;
-        int cycle = dfs(u);
-        if (cycle != UNDEFINED) return cycle;
+        if (visited[u]) {
+            cycle_end = v;
+            cycle_start = u;
+            return true;
+        }
+        
+        if (findCycle(u)) return true;
     }
 
-    return UNDEFINED;
+    return false;
 }
 
 // ###########################################################################
