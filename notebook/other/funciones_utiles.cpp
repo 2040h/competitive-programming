@@ -22,6 +22,7 @@ int myint1 = stoi(myString); // Funciona con int y float.
 *S.rbegin(); // Elemento más grande de un set
 lower_bound(all(A), val); // lower_bound: find the first pos in which val could be inserted without changing the order.
 *max_element(all(A)); *min_element(all(A)); // upper_bound: find last postion in which val could be inserted without changing the order.
+sort(all(A), greater()); // Para ordenar un vector, llamar a una función bool
 
 // Suma de: M[a] + ... + M[b]
 int getSumBetween(int a, int b){ // Notar que prefixSum tiene tamaño |M| + 1
