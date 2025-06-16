@@ -75,7 +75,7 @@ int main() {
     uniform_int_distribution<int> dist_n;
 
     for (int i = 0; i < t; i++) {
-        // Generate x in [1000, 1e9]
+        // Generate x in [1000, 1e7]
         long long x = dist_x(rng);
 
         // Generate a total sum of n + m <= 40
