@@ -1,0 +1,8 @@
+Compilar (F9):
+g++ -std=gnu++11 -g -O2 -Wconversion -Wshadow -Wall -Wextra -D_GLIBCXX_DEBUG -c "%f"
+
+Ejecutar con los .in (F5):
+> "%e".out; for x in "./%e"*.in ; do echo "$(basename "$x")"  >> "%e".out ; "./%e" < "$x" >> "%e".out 2>&1 ; echo "==========================" >> "%e".out ; done
+
+Generar un .in con el output del programa:
+"./%e" > "%e".in
