@@ -18,7 +18,7 @@ bool bellman_ford(ll n, indice_nodo inicio, vector<Edge> &edges, vector<peso> &d
  
     // Obtiene las distancias mas cortas desde inicio hacia todos.
     dist[inicio] = 0;
-    for(ll i=0; i<n; i++){
+    forn(i, n){
         for(Edge e : edges){
             if(-LINF < dist[e.a] && dist[e.a] < LINF){
                 dist[e.b] = min(dist[e.b], dist[e.a] + e.cost);
