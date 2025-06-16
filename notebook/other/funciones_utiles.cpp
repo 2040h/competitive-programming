@@ -24,6 +24,7 @@ M.erase(it); // Borrar siempre en un multiset (y en general) usando un iterador 
 sort(all(A), greater()); // Para ordenar un vector, llamar a una función bool
 *max_element(all(A)); *min_element(all(A)); 
 
+
 // Suma de: M[a] + ... + M[b]
 int getSumBetween(int a, int b){ // Notar que prefixSum tiene tamaño |M| + 1
     if (a > b || a < 0 || b >= SIZE(prefixSum)-1) return UNDEFINED;
