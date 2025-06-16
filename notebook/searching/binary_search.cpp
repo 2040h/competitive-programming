@@ -58,3 +58,10 @@ int leftBinarySearch(int start, int end){
 }
 
 
+auto it1 = lower_bound(all(A), val); // Primer elemento >= val
+auto it2 = upper_bound(all(A), val); // Primer elemento > val
+
+// Posibilidades de lower_bound (también aplica para lower_bound)
+if (it1 == A.end()) // No hay elemento >= val, tengo que retroceder uno a it1 para apuntar al elemento más grande
+if (it1 == A.begin()) // Estoy apuntando al elemento más chico de A. Si retrocedo, runtime error
+
