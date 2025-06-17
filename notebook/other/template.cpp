@@ -18,6 +18,7 @@ const double PI = acos(-1.0);
 #define snd second
 #define esta(x,c) ((c).find(x) != (c).end())  // Devuelve true si x es un elemento de c.
 #define all(c) (c).begin(),(c).end()
+#define SIZE(c) int((c).size())
 
 #define DBG(x) cerr << #x << " = " << (x) << endl
 #define RAYA cerr << "----------" << endl
