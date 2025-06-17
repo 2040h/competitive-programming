@@ -8,6 +8,17 @@ void dfs(int v){
     }
 }
 
+// Encontrar ciclo en un grafo simple
+void defineParentFrom(int v){
+    visited[v] = true;
+    for (int u : adjList[v]){
+        if (!visited[u]){
+            parent[u] = v;
+            defineParentFrom(u);
+        }
+    }
+}
+
 bool findCycle(int v){
     visited[v] = true;
     for (int u : adjList[v]){
@@ -32,8 +43,8 @@ int findCycle(int v){
     visited[v] = VISITANDO;
     
     for (int u : outEdges[v]){
-        if (visited[v] == VISITANDO) return v;
-        if (visited[v] == NO_VISITADO){
+        if (visited[u] == VISITANDO) return v;
+        if (visited[u] == NO_VISITADO){
             int possibleCycle = findCycle(u);
             if (possibleCycle != UNDEFINED) return possibleCycle;
         }

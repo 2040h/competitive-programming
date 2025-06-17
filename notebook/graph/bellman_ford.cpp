@@ -10,6 +10,10 @@ struct Edge {
 
 // ############################################################### //
 
+// Comentario importante: si queremos saber la distancia de inicio a un vértice particular llamado destino tenemos que haber modificado al grafo G original.
+// Hay que correr un DFS desde G^T empezando desde destino para poder detectar todos los vértices que son alcanzables desde este y solo agregar las aristas de dichos vértices a nuestro edges
+// Esto es para ignorar los ciclos negativos que no pertenecen a ningun recorrido desde inicio a destino
+
 // Asume grafo representado como lista de aristas.
 
 bool bellman_ford(ll n, indice_nodo inicio, vector<Edge> &edges, vector<peso> &dist){

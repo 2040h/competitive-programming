@@ -25,9 +25,7 @@ bool toposort(const vector<vector<ll>> &ady, vector<ll> &orden){
     orden.clear();
 
     for(ll v=0; v < ady.size(); v++){
-        if (color[v] == WHITE){
-            if(tdfs(v, ady, color, orden)) return true;
-        }
+        if (color[v] == WHITE && tdfs(v, ady, color, orden)) return true;
     }
 
     reverse(orden.begin(), orden.end());
