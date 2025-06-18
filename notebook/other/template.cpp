@@ -3,6 +3,8 @@ using namespace std;
 
 typedef long long ll;
 typedef long double ld;
+using vi = vector<int>;
+using vb = vector<bool>;
 
 const ll UNDEFINED = -1;
 const int MAX_N = 1e5 + 1;

@@ -20,14 +20,14 @@ bool tdfs(ll v, const vector<vector<ll>> &ady, vector<Color> &color, vector<ll> 
 
 // Devuelve true sii existe un ciclo en G.
 // Si no existe ciclo, en orden queda almacenado un orden topologico de G.
-bool toposort(const vector<vector<ll>> &ady, vector<ll> &orden){
-    vector<Color> color(ady.size(), WHITE);
+bool toposort(vector<vector<ll>> &ady, vector<ll> &orden){
+    vector<Color> color(SIZE(ady), WHITE);
     orden.clear();
 
-    for(ll v=0; v < ady.size(); v++){
+    forn(v, SIZE(ady)){
         if (color[v] == WHITE && tdfs(v, ady, color, orden)) return true;
     }
 
-    reverse(orden.begin(), orden.end());
+    reverse(all(orden));
     return false;
 }

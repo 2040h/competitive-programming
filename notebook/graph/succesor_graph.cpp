@@ -97,7 +97,7 @@ struct SuccesorGraph{
 	
 	
 	void findCycles(){
-		vector<int> representantsOfCycles;
+		vi representantsOfCycles;
 		
 		forn(i, SIZE(succesors)){
 			if (visited[i] == NO_VISITADO) dfs(i, representantsOfCycles);

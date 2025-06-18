@@ -14,7 +14,7 @@ struct Graph {
         adjList[u].pb(v);
         adjList[v].pb(u);
     }
-}
+};
 
 enum Estado{
     NO_VISITADO,

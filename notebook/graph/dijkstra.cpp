@@ -21,7 +21,10 @@ vector<ll> dijkstra(indice_nodo inicio, vector<vector<nodo_pesado>> &ady){
 
         if (vis[v]) {continue;}
         vis[v] = true;
-        for(const auto& [longitud, u] : ady[v]){
+        for(auto p : ady[v]){
+            ll longitud = p.fst;
+            ll u = p.snd;
+
             // Longitud del camino de v hacia u.
             // Relax:
             if(distancia[v] + longitud < distancia[u]){
