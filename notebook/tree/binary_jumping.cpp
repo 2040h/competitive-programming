@@ -5,7 +5,7 @@ struct BinaryJumping{
 	
 	// Inicializacion en tiempo O(n*log(max_k))
 	BinaryJumping(vector<int> &succ, int max_k){
-		logk = log2(max_k);  // Piso.
+		logk = (int) log2(max_k);  // Piso.
 		binaryJumping.assign(SIZE(succ), vector<int>(logk+1, UNDEFINED));
 		
 		for(int i=0; i<SIZE(succ); i++){

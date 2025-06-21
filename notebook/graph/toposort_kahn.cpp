@@ -10,7 +10,7 @@ bool toposort(vector<vector<int>> &ady, vector<int> &orden){
 		}
 	}
 	
-	queue<int> q;
+	queue<int> q; // Si usamos min priority_queue podemos obtener el orden lexicografico más chico
 	for(int v=0; v<SIZE(ady); v++){
 		if(in_deg[v] == 0){
 			q.push(v);

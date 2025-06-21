@@ -1,32 +1,56 @@
-// DFS simple
-void dfs(ll v, vector<vector<ll>> &ady, vector<bool> &vis){
-    vis[v] = true;
-    for(ll u : ady[v]){
-        if (!vis[u]){
-            dfs(u, ady, vis);
-        }
-    }
-}
+// Algoritmos para Grafos simples
 
-// DFS que me dice si existe un ciclo en un grafo (no dirigido) y en caso de existir, retorna la back-edge
-pair<bool, edge> hasCycle(int v, vector<vector<int>> &adjList, vector<bool> &visited, vector<int> &parents){ 
+void dfs(int v){
     visited[v] = true;
-    edge e = {UNDEFINED, UNDEFINED};
-    pair<bool, edge> res = {false, e};
+    for (int u : adjList[v]){
+        parent[u] = v;
+        if (!visited[u]) dfs(u);
+    }
+}
 
-    for (int i = 0; i < adjList[v].size(); i++){
-        int w = adjList[v][i];
-        if (!visited[w]){
-            parents[w] = v;
-            res = hasCycle(w, adjList, visited, parents);
-            if (res.first){
-                break;
-            }
-        } else if (visited[w] && parents[v] != w && parents[v] != UNDEFINED){
-            edge backEdge = {w,v};
-            return {true, backEdge};
+// Encontrar ciclo en un grafo simple
+void defineParentFrom(int v){
+    visited[v] = true;
+    for (int u : adjList[v]){
+        if (!visited[u]){
+            parent[u] = v;
+            defineParentFrom(u);
+        }
+    }
+}
+
+bool findCycle(int v){
+    visited[v] = true;
+    for (int u : adjList[v]){
+        if (u == parent[v]) continue; 
+        if (visited[u]) {
+            cycle_end = v;
+            cycle_start = u;
+            return true;
+        }
+        
+        if (findCycle(u)) return true;
+    }
+
+    return false;
+}
+
+// ###########################################################################
+// Algoritmos para grafos dirigidos
+
+// Acá devuelve ciclos de longitud 2
+int findCycle(int v){
+    visited[v] = VISITANDO;
+    
+    for (int u : outEdges[v]){
+        if (visited[u] == VISITANDO) return v;
+        if (visited[u] == NO_VISITADO){
+            int possibleCycle = findCycle(u);
+            if (possibleCycle != UNDEFINED) return possibleCycle;
         }
     }
 
-    return res;
+    visited[v] = VISITADO;
+    return UNDEFINED;
 }
+

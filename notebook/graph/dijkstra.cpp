@@ -5,7 +5,7 @@ using nodo_pesado = pair<peso, indice_nodo>;
 // ############################################################### //
 
 // Devuelve el vector de distancias desde inicio al i-esimo vertice.
-vector<ll> dijkstra(const indice_nodo inicio, const vector<vector<nodo_pesado>> &ady){
+vector<ll> dijkstra(indice_nodo inicio, vector<vector<nodo_pesado>> &ady){
     vector<ll> distancia(ady.size(), LINF);
     // vector<ll> parent(ady.size(), UNDEFINED);
     vector<bool> vis(ady.size(), false);
@@ -21,7 +21,10 @@ vector<ll> dijkstra(const indice_nodo inicio, const vector<vector<nodo_pesado>> 
 
         if (vis[v]) {continue;}
         vis[v] = true;
-        for(const auto& [longitud, u] : ady[v]){
+        for(auto p : ady[v]){
+            ll longitud = p.fst;
+            ll u = p.snd;
+
             // Longitud del camino de v hacia u.
             // Relax:
             if(distancia[v] + longitud < distancia[u]){
