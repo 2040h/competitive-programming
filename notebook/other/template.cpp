@@ -5,6 +5,7 @@ typedef long long ll;
 typedef long double ld;
 using vi = vector<int>;
 using vb = vector<bool>;
+using vl = vector<ll>;
 
 const ll UNDEFINED = -1;
 const int MAX_N = 1e5 + 1;
