@@ -15,6 +15,7 @@ using ordered_multiset = tree<
 ordered_set v;
 v.insert(0);
 *v.find_by_order(k); // Elemento en la posición k-th
+*v.find_by_rank(m); // Te dice el index del elemento m en v (suponiend que v ya está ahí)
 
 ordered_multiset<T> s;
 s.insert({t, i}); // T es el tipo del primer elemento del pair. El segundo es un indice para definir una relación de orden estricto (se rompe sin esto)
