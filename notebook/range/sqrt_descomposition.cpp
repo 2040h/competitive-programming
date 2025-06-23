@@ -6,7 +6,7 @@ struct SqrtDescomposition{
 
     SqrtDescomposition(vi &arr) : A(arr){
         n = SIZE(arr);
-        sqrtOfN = sqrt(n) + 1;
+        sqrtOfN = (int) sqrt(n) + 1;
         descompositionOfA.resize(sqrtOfN);
         minOfDescomposition.resize(sqrtOfN, INF);
 
