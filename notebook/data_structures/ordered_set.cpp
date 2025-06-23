@@ -3,6 +3,7 @@
 using namespace __gnu_pbds; 
 
 #define ordered_set tree<ll, null_type,less<ll>, rb_tree_tag,tree_order_statistics_node_update> 
+
 template <typename T>
 using ordered_multiset = tree<
     pair<T, int>,
@@ -13,6 +14,7 @@ using ordered_multiset = tree<
 >;
 
 ordered_set v;
+ordered_multiset<int> ms;
 v.insert(0);
 *v.find_by_order(k); // Elemento en la posición k-th
 *v.find_by_rank(m); // Te dice el index del elemento m en v (suponiend que v ya está ahí)
