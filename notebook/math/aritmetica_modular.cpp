@@ -1,3 +1,8 @@
+ll mod(ll a, ll m){
+	ll res = ((a % m) + m) % m;
+	return res;
+}
+
 ll addMod(ll a, ll b, ll m = MOD){
     ll res = ((a % m) + (b % m)) % m;
     return res;
