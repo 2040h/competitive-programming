@@ -1,4 +1,4 @@
-// Custom sorting para un set
+// Custom sorting para un set y pq
 
 struct CustomComparator{
 	bool operator()(pair<int, ll> a, pair<int, ll> b) const{
@@ -8,3 +8,4 @@ struct CustomComparator{
 };
 
 set<pair<int, ll>, CustomComparator> s;
+priority_queue<pair<int, ll>, vector<pair<int, ll>>, CustomComparator> q;
