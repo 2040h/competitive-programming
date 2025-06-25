@@ -1,0 +1,14 @@
+# General
+
+- Si tengo todos los elementos de `[1, n]` entonces puedo sumar todos los valores del rango `[0, n*(n+1)/2]`.
+- Si puedo obtener todo lo de `[a, b]` mediante sumas y agrego el elemento `c` tq `c <= b+1`, entonces ahora puedo obtener todo lo de `[a, b + c]`.
+- Si dado un `i`, me piden ver los valores a la izquierda/derecha de `i` tal que `<= A[i]` o `>= A[i]` es útil crear el array `B` tq `B[i] = {A[i], i}` y ordenarlo lexicograficamente. Luego, es fácil ver cuáles son las <= `A[i]` o >= `A[i]` y cuáles son sus indices. 
+
+	Puedo iterar en orden los elementos y con un set mantener los indices ordenados por si quiero algunos específicos.
+
+- Si quiero reconstruir una solución óptima de DP o grafos, puedo hacer lo siguiente: supongamos que tengo la función `f(i, j)` que me dice el valor óptimo buscado. Puedo, crear la matriz `buildSolution` y en `buildSolution[i][j]` guardar la branch por la que se metió `f(i, j)`.
+
+## TIPS DP 
+- Si sé que la cantidad de estados quizás no es tan grande pero el espacio de ellos si lo es, usar `map`
+## ERRORES COMUNES
+- Si `memo[i][j] = UNDEFINED`, fijarse que `memo[i][j]` nunca pueda valer `-1`
