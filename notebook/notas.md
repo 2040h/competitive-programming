@@ -12,3 +12,6 @@
 - Si sé que la cantidad de estados quizás no es tan grande pero el espacio de ellos si lo es, usar `map`
 ## ERRORES COMUNES
 - Si `memo[i][j] = UNDEFINED`, fijarse que `memo[i][j]` nunca pueda valer `-1`
+
+## SUGERENCIAS
+- Si estoy haciendo uso de una variable `j` como indice de un vector pero solo la uso para agregar elementos en un orden especifico, entonces conviene hacer `.pb()`. Esto es para ahorrar posibles bugs con el tema de ir incrementando `j`. Además, deja un código más legible.
