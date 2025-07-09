@@ -36,7 +36,7 @@ private:
     }
     
     flow_type dfs(int u, flow_type f) {
-        if (u == t_) return f;
+        if (u == t_ || f == 0) return f;
         for (int &i = W[u]; i < SIZE(G[u]); i++) {
             Edge &e = G[u][i]; int v = e.to;
             if (e.cap <= e.f || dist[v] != dist[u] + 1) {continue;}
