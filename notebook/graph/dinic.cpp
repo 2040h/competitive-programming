@@ -1,7 +1,7 @@
 // En general: O(n^2 * m)
 // Matching en grafo bipartito: O(sqrt(n)*m) [Las constantes no son optimas]
 
-using flow_type = ll;  // Ojo, si se cambia, modificar LLONG_MAX. Y si se cambia por double o simil cambiar las comparaciones.
+using flow_type = ll;  // Si se cambia por double o simil cambiar las comparaciones.
 
 struct Dinic {
     Dinic(int N) : n(N), G(N), dist(N) {}
@@ -13,7 +13,7 @@ struct Dinic {
     
     flow_type max_flow(int s, int t) {  // Dinic.
         t_ = t; flow_type ans = 0;
-        while (bfs(s, t)) while (flow_type dl = dfs(s, LLONG_MAX)) ans += dl;
+        while (bfs(s, t)) while (flow_type dl = dfs(s, numeric_limits<flow_type>::max())) ans += dl;
         return ans;
     }
     
