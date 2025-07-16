@@ -15,3 +15,10 @@
 
 ## SUGERENCIAS
 - Si estoy haciendo uso de una variable `j` como indice de un vector pero solo la uso para agregar elementos en un orden especifico, entonces conviene hacer `.pb()`. Esto es para ahorrar posibles bugs con el tema de ir incrementando `j`. Además, deja un código más legible.
+
+## MATEMATICA
+- Sea x un número. Puedo calcular sus divisores $\iff$ puedo factorizarlo en primos
+- Las funciones trigonométricas en C++ trabajan en radianes, así que para cualquier ángulo que tenga en grados tengo que previamente convertirlo usando la relación entre 180 y $\pi$
+
+## INTERACTIVOS
+- Cada vez que hago `cout` tengo que hacer un `cout.flush()`
