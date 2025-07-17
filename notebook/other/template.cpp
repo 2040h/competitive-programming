@@ -4,8 +4,11 @@ using namespace std;
 typedef long long ll;
 typedef long double ld;
 using vi = vector<int>;
+using vvi = vector<vi>;
 using vb = vector<bool>;
+using vvb = vector<vb>;
 using vl = vector<ll>;
+using ii = pair<int,int>
 
 const ll UNDEFINED = -1;
 const int MAX_N = 1e5 + 1;
