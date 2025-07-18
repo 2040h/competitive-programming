@@ -13,9 +13,11 @@
 // Para ver si es conexo, una vez que ya vi (2), puedo correr Hierholzer y comprobar que la longitud del camino es igual a |E|+1.
 
 // ady[i][j] = <indice nodo, id de arista>. En caso de grafo ponerle el mismo id a ambas direcciones. NOTA: El dfs es destructivo para ady.
+// Camino hay que hacerle reverse(all(camino)) para que sea valido luego de calcularlo!
+
 using indice_nodo_t = int;
 
-void euler_dfs(indice_nodo_t v, vector<vector<pair<indice_nodo_t, int>>> &ady, vector<bool> &aristas_visitadas, vector<indice_nodo_t> &camino){
+void euler_dfs(indice_nodo_t v, vector<vector<pair<indice_nodo_t, int>>> &ady, vb &aristas_visitadas, vector<indice_nodo_t> &camino){
 	while(!ady[v].empty()){
 		auto [u, id_e] = ady[v].back();
 		ady[v].pop_back();
