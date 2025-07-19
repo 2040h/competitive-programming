@@ -2,7 +2,7 @@
 // Matching en grafo bipartito: O(sqrt(n)*m) [Las constantes no son optimas]
 
 using flow_type = ll;  // Si se cambia por double o simil cambiar las comparaciones.
-struct Edge { int from int to, rev; flow_type f, cap; };  // rev me ayuda a acceder a la arista que vuelve, me da el indice en G[u].
+struct Edge { int from, to, rev; flow_type f, cap; };  // rev me ayuda a acceder a la arista que vuelve, me da el indice en G[u].
 
 struct Dinic {
     int n, t_; vector<vector<Edge>> G;
