@@ -2,13 +2,16 @@
 // Matching en grafo bipartito: O(sqrt(n)*m) [Las constantes no son optimas]
 
 using flow_type = ll;  // Si se cambia por double o simil cambiar las comparaciones.
+struct Edge { int from int to, rev; flow_type f, cap; };  // rev me ayuda a acceder a la arista que vuelve, me da el indice en G[u].
 
 struct Dinic {
+    int n, t_; vector<vector<Edge>> G;
+    
     Dinic(int N) : n(N), G(N), dist(N) {}
     
     void add_edge(int u, int v, flow_type cap, bool directed = true) {
-        G[u].pb({v, SIZE(G[v]), 0, cap});
-        G[v].pb({u, SIZE(G[u])-1, directed ? 0 : cap, 0}); // Use cap instead of 0 if bidirectional
+        G[u].pb({u, v, SIZE(G[v]), 0, cap});
+        G[v].pb({v, u, SIZE(G[u])-1, directed ? 0 : cap, 0}); // Use cap instead of 0 if bidirectional
     }
     
     flow_type max_flow(int s, int t) {  // Dinic.
@@ -18,9 +21,6 @@ struct Dinic {
     }
     
 private:
-    struct Edge { int to, rev; flow_type f, cap; };  // rev me ayuda a acceder a la arista que vuelve, me da el indice en G[u].
-    
-    int n, t_; vector<vector<Edge>> G;
     vi dist;  // level graph
     vi W;  // work, ptr, optimizacion.
     
