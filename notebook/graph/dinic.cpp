@@ -11,7 +11,7 @@ struct Dinic {
     
     void add_edge(int u, int v, flow_type cap, bool directed = true) {
         G[u].pb({u, v, SIZE(G[v]), 0, cap});
-        G[v].pb({v, u, SIZE(G[u])-1, directed ? 0 : cap, 0}); // Use cap instead of 0 if bidirectional
+        G[v].pb({v, u, SIZE(G[u])-1, 0, directed ? 0 : cap}); // Use cap instead of 0 if bidirectional
     }
     
     flow_type max_flow(int s, int t) {  // Dinic.
