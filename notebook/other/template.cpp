@@ -10,6 +10,9 @@ using vvb = vector<vb>;
 using vl = vector<ll>;
 using ii = pair<int,int>
 
+template <typename T>
+using vv = vector<vector<T>>;
+
 const ll UNDEFINED = -1;
 const int MAX_N = 1e5 + 1;
 const int MOD = 1e9 + 7;
