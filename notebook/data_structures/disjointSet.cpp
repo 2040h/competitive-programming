@@ -4,8 +4,7 @@ struct DisjointSet{
 
     DisjointSet(ll n){
         rnk.assign(n, 0);
-        for (ll i = 0; i < n; i++)
-            parent.push_back(i);
+        forn(i, n) {parent.pb(i);}
         numOfComponents = n;
     }
 
@@ -16,8 +15,7 @@ struct DisjointSet{
 
     void unionSet(ll x, ll y){
         // Encontrar los representantes del conjunto.
-        x = findSet(x);
-        y = findSet(y);
+        x = findSet(x); y = findSet(y);
 
         // Si los conjuntos son disjuntos:
         if (x != y){
