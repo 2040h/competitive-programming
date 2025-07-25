@@ -5,7 +5,8 @@ using flow_type = ll;  // Si se cambia por double o simil cambiar las comparacio
 struct Edge { int from, to, rev; flow_type f, cap; };  // rev me ayuda a acceder a la arista que vuelve, me da el indice en G[u].
 
 struct Dinic {
-    int n, t_; vector<vector<Edge>> G;
+    int n, t_; vv<Edge> G;
+    vi mincut_ST;  // 1 si pertenece a S, 2 si pertenece a T.
     
     Dinic(int N) : n(N), G(N), dist(N) {}
     
@@ -14,11 +15,21 @@ struct Dinic {
         G[v].pb({v, u, SIZE(G[u])-1, 0, directed ? 0 : cap}); // Use cap instead of 0 if bidirectional
     }
     
-    flow_type max_flow(int s, int t) {  // Dinic.
+    // Solo llamar una vez.
+    flow_type max_flow(int s, int t) {
         t_ = t; flow_type ans = 0;
         while (bfs(s, t)) while (flow_type dl = dfs(s, numeric_limits<flow_type>::max())) ans += dl;
         return ans;
     }
+    
+    // Requiere haber llamado a max_flow.
+    void find_mincut_ST(int s, int t){
+		mincut_ST.assign(n, UNDEFINED);
+		mincut_ST[s] = 1;
+		mincut_ST[t] = 2;
+		dfs_mincut(s, 1);
+		dfs_mincut(t, 2);
+	}
     
 private:
     vi dist;  // level graph
@@ -45,4 +56,16 @@ private:
         }
         return 0;
     }
+    
+    void dfs_mincut(int v, int color){
+		for(auto e : G[v]){
+			if(e.f < e.cap){
+				int u = e.to;
+				if(mincut_ST[u] == UNDEFINED){
+					mincut_ST[u] = color;
+					dfs_mincut(u, color);
+				}
+			}
+		}
+	}
 };
