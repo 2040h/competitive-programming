@@ -25,10 +25,7 @@ struct Dinic {
     // Requiere haber llamado a max_flow.
     void find_mincut_ST(int s, int t){
 		mincut_ST.assign(n, UNDEFINED);
-		mincut_ST[s] = 1;
-		mincut_ST[t] = 2;
-		dfs_mincut(s, 1);
-		dfs_mincut(t, 2);
+		dfs_mincut(s, 1); dfs_mincut(t, 2);
 	}
     
 private:
@@ -58,13 +55,10 @@ private:
     }
     
     void dfs_mincut(int v, int color){
+		mincut_ST[v] = color;
 		for(auto e : G[v]){
-			if(e.f < e.cap){
-				int u = e.to;
-				if(mincut_ST[u] == UNDEFINED){
-					mincut_ST[u] = color;
-					dfs_mincut(u, color);
-				}
+			if(e.f < e.cap && mincut_ST[e.to] == UNDEFINED){
+				dfs_mincut(e.to, color);
 			}
 		}
 	}
