@@ -1,4 +1,4 @@
-ll mod(ll a, ll m){
+ll mod(ll a, ll m = MOD){
 	ll res = ((a % m) + m) % m;
 	return res;
 }
@@ -29,11 +29,11 @@ ll divideMod(ll a, ll b, ll m = MOD){
     return res;
 }
 
-void calcularFactorial(ll n){
+void calcularFactorial(ll n, ll m = MOD){
 	fact[0] = 1;
-	forsn(i, 1, n+1) fact[i] = mulMod(fact[i-1], i, MOD);
+	forsn(i, 1, n+1) fact[i] = mulMod(fact[i-1], i, m);
 }
 
-ll combinatorial_func(ll n, ll k){
-	return divideMod(fact[n], mulMod(fact[k], fact[n-k], MOD), MOD);
+ll combinatorial_func(ll n, ll k, ll m = MOD){
+	return divideMod(fact[n], mulMod(fact[k], fact[n-k], m), m);
 }
