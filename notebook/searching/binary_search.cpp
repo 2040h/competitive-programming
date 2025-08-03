@@ -7,7 +7,8 @@ int binarySearch(int start, int end, vector<ll> &A, ll v){
         return -1;
     }
 
-    int mid = (start + end)/2;
+    //int mid = (start + end)/2;
+    int mid = start + (end-start)/2;
 
     if (A[mid] == v){
         return mid;
@@ -24,7 +25,8 @@ int rightBinarySearch(int start, int end){
     int r = end + 1;
 
     while (r - l > 1){
-        int mid = (l + r)/2;
+        int mid = l + (r-l)/2;
+        //int mid = (l + r)/2;
 
         if (P(mid)){
             l = mid;
@@ -44,7 +46,9 @@ int leftBinarySearch(int start, int end){
     int r = end + 1; 
 
     while(r - l > 1) { 
-        int mid = (l + r) / 2;
+        //int mid = (l + r) / 2;
+        int mid = start + (end-start)/2;
+
         if(!P(mid)) {
             l = mid;
         } else {
