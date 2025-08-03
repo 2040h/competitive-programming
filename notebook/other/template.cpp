@@ -8,7 +8,7 @@ using vvi = vector<vi>;
 using vb = vector<bool>;
 using vvb = vector<vb>;
 using vl = vector<ll>;
-using ii = pair<int,int>
+using ii = pair<int,int>;
 
 template <typename T>
 using vv = vector<vector<T>>;
