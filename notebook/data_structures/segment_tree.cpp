@@ -42,6 +42,3 @@ struct SegmentTree{
     }
 };
 
-// #######################################################################################
-// Segment tree para range update y point query
-

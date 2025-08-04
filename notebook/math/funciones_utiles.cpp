@@ -37,3 +37,5 @@ vector<pair<ll, int>> factorizar_primos(ll a){
     if (a != 1) factorizacion_primos.pb({a, 1}); // Si no es 1 después de haberlo dividido por los primos de hasta sqrt(a), entonces es un primo > sqrt(a) de potencia 1
     return factorizacion_primos;
 }
+
+// pow(2, k) = 1 << k, esto es un shift izquierdo
