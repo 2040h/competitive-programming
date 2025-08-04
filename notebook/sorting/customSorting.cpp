@@ -1,5 +1,11 @@
-// Custom sorting para un set y pq
+// Custom sorting en un struct
+struct MyStruct{
+	bool operator<(const MyStruct& other) const {
+        return age < other.age; // sort by age
+    }
+}
 
+// Custom sorting para un set y pq
 struct CustomComparator{
 	bool operator()(pair<int, ll> a, pair<int, ll> b) const{
 		if (a.fst != b.fst) return a.fst > b.fst;
