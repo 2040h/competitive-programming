@@ -19,7 +19,7 @@ struct SegmentTree{
 
     SegmentTree(int N, vl &a, ll neutro) : n(N), A(a), elemNeutro(neutro){
         B.resize(4*n);
-        build(1, 0, n-1);
+        build(1, 0, n-1); // O(n * log(n)^2)
     }
 
     ll f(int v, ll x, ll y){
@@ -37,7 +37,6 @@ struct SegmentTree{
         }
     }
 
-    // O(log(n)^2)
     // query(1, 0, n-1, l, r)
     ll query(int v, int tl, int tr, int l, int r, ll x, ll y){
         if (l > r) return elemNeutro; 
