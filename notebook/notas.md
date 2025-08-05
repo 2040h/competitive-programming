@@ -14,6 +14,7 @@
 ## ERRORES COMUNES
 - Si `memo[i][j] = UNDEFINED`, fijarse que `memo[i][j]` nunca pueda valer `-1`
 - Si uso un `map` o `unordered_map`, chequear de no estar definiendo keys de más cuando hago una consulta estilo `M[key]`
+- Usar un `set` en lugar de un `unordered_set` cuando no me importa el orden
 
 ## SUGERENCIAS
 - Si estoy haciendo uso de una variable `j` como indice de un vector pero solo la uso para agregar elementos en un orden especifico, entonces conviene hacer `.pb()`. Esto es para ahorrar posibles bugs con el tema de ir incrementando `j`. Además, deja un código más legible.
