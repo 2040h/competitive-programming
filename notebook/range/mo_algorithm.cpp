@@ -14,6 +14,7 @@ struct Query {
 };
 
 vi mo_s_algorithm(vector<Query> queries) {
+    block_size = (int) sqrt(n)+1;
     vi answers(SIZE(queries));
     sort(all(queries));
 
