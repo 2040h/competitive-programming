@@ -1,5 +1,4 @@
-// M = 1e9+7, 991831889, M=1e9+9 (Primo)
-// B=31, B=53, B=9973 (No necesariamente primo)
+// M = 1e9+7, 991831889, M=1e9+9 (Primo). B=31, B=53, B=9973 (No necesariamente primo).
 
 // Precomputo: O(|s|)
 // Query: O(1)
@@ -18,6 +17,6 @@ struct HashedString {
 	}
 	
 private:
-	const ll M = MOD, B = 31  // Cambiar M y B.  // M=991831889, M=1e9+9, B=53, B=9973.
+	const ll M = MOD, B = 31  // Cambiar M y B.
 	vector<ll> prefix_hash, potencia;
 };
