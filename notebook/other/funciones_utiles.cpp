@@ -14,7 +14,7 @@ while (iss >> word) words.pb(word); // Leer todas las palabras de un string sepa
 // ######################################################################
 // String 
 string stri = to_string(myInt);
-char c; isupper(c); 
+char c; isupper(c); isdigit(c); 
 
 // ######################################################################
 // Otros

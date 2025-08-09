@@ -18,6 +18,7 @@
 
 ## SUGERENCIAS
 - Si estoy haciendo uso de una variable `j` como indice de un vector pero solo la uso para agregar elementos en un orden especifico, entonces conviene hacer `.pb()`. Esto es para ahorrar posibles bugs con el tema de ir incrementando `j`. Además, deja un código más legible.
+- Si tengo `n` elementos y los elementos pueden ser muy grandes, cuando no me interesen los valores y quiero llevar frecuencia de ellos, puedo comprimirlos con otro valor y luego con otro vector poder acceder `O(1)` a su frecuencia. Esto sirve para evitar la constance de usar un `unordered_map`
 
 ## MATEMATICA
 - Sea x un número. Puedo calcular sus divisores $\iff$ puedo factorizarlo en primos
