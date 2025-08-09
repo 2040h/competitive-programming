@@ -17,6 +17,6 @@ struct HashedString {
 	}
 	
 private:
-	const ll M = MOD, B = 31  // Cambiar M y B.
+	const ll M = MOD, B = 31;  // Cambiar M y B.
 	vector<ll> prefix_hash, potencia;
 };
