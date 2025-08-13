@@ -20,3 +20,32 @@ private:
 	const ll M = MOD, B = 31;  // Cambiar M y B.
 	vector<ll> prefix_hash, potencia;
 };
+
+// ######################################################################################################
+// Implementación alternativa
+
+powers.resize(maxPower+1, 1); invPowers.resize(maxPower+1, 1);
+forsn(i, 1, maxPower+1) powers[i] = mulMod(powers[i-1], p, m);
+forsn(i, 1, maxPower+1) invPowers[i] = binPowMod(powers[i], m-2, m);
+
+struct HashString{
+	ll p, m, n; // primo, mod, SIZE(s)
+	vector<char> s;
+	const vl *powers;
+	const vl *invPowers;
+	vl prefixHash;
+	
+	ll getValue(char c){return c - 'a' + 1;}
+
+	HashString(){}
+	HashString(ll P, ll M, const vector<char> &S, const vl &Powers, const vl &InvPowers) : p(P), m(M), n(SIZE(S)), s(S), powers(&Powers), invPowers(&InvPowers){
+		prefixHash.resize(n+1, 0);
+		forsn(i, 1, n+1) prefixHash[i] = addMod(prefixHash[i-1], mulMod(getValue(s[i-1]), (*powers)[i-1], m), m);
+	}
+	
+	ll get_hash(int start, int end){ // [start, end]
+		ll res = addMod(prefixHash[end+1], (-1)*prefixHash[start], m); // res = hash[0, ..., end] - hash[0, ..., start-1] 
+		res = mulMod(res, (*invPowers)[start], m); // res /= 2^start
+		return res;
+	}
+};

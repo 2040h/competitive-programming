@@ -6,12 +6,12 @@ A handy reference for managing files, compiling, and running tests efficiently w
 
 ### Compile with Warnings (F8)
 ```bash
-g++ -std=gnu++11 -g -O2 -Wconversion -Wshadow -Wall -Wextra -D_GLIBCXX_DEBUG -c "%f"
+g++ -std=gnu++17 -g -O2 -Wconversion -Wshadow -Wall -Wextra -D_GLIBCXX_DEBUG -c "%f"
 ```
 
 ### Build (F9)
 ```bash
-g++ -std=gnu++11 -g -O2 -Wconversion -Wshadow -Wall -Wextra -D_GLIBCXX_DEBUG -o "%e" "%f"
+g++ -std=gnu++17 -g -O2 -Wconversion -Wshadow -Wall -Wextra -D_GLIBCXX_DEBUG -o "%e" "%f"
 ```
 
 ### Execute All Tests and Save Output in a File (F5)
