@@ -25,7 +25,15 @@ struct Mat {
 		}
 		return res;
 	}
-	
+		
+	// Constructores de matrices vectores columnas.
+	static Mat crearVectorColumna(vector<matrix_t> v) {  // ej: Mat inicial = Mat::crearVectorColumna(vector<int> {1, 1});
+		Mat res(SIZE(v), 1);
+		for (int i=0; i<SIZE(v); i++){
+			res.a[i][0] = v[i];
+		}
+		return res;
+	}
 	
 	inline Mat operator + (const Mat &b) {
 		assert(n == b.n && m == b.m);
