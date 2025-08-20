@@ -1,4 +1,4 @@
-// Quiero saber el valor de f(j, i) donde f(j, i) = min(f(j-1, c) + cost(c+1, i)) para algún c < i
+// Quiero saber el valor de f(j, i) donde f(j, i) = min(f(j-1, c) + cost(c+1, i)) para algun c < i
 // Para poder optimizarlo tengo que cumplir la propiedad de que el c que minimiza f(j, i) es <= al c' que minimiza f(j, i+1)
 
 ll costs(int i, int j){

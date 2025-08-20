@@ -29,7 +29,7 @@ struct SuccesorGraph{
 	}
 	
 	int distanceInTheCycle(int v, int u){
-		// Sé que los dos vértices pertenecen al mismo ciclo y quiero calcular cuál es su distancia
+		// Se que los dos vertices pertenecen al mismo ciclo y quiero calcular cual es su distancia
 		int res = distanceFromRepresentant[u] - distanceFromRepresentant[v]; // v -> ... -> u
 		if (distanceFromRepresentant[u] < distanceFromRepresentant[v]){ // v -> ... inicio ciclo -> ... -> u
 			int longitudCiclo = lengthOfCycleAt[representantOfVertex[v]];
@@ -43,13 +43,13 @@ struct SuccesorGraph{
 		int rootOfV = rootOfTree[v], rootOfU = rootOfTree[u];
 		int res;
 		
-		if (representantOfVertex[rootOfV] != representantOfVertex[rootOfU]) res = UNDEFINED; // Si no están en el mismo ciclo
-		else if (rootOfV == rootOfU){ // Están en el mismo árbol		
+		if (representantOfVertex[rootOfV] != representantOfVertex[rootOfU]) res = UNDEFINED; // Si no estan en el mismo ciclo
+		else if (rootOfV == rootOfU){ // Estan en el mismo arbol		
 			int jumps = distanceFromRoot[v] - distanceFromRoot[u];
 			int vertexJumpt = BJ.succ_k(v, jumps);
 			if (vertexJumpt != u) jumps = -1;
 			res = jumps;
-		} else if (representantOfVertex[u] == UNDEFINED) res = UNDEFINED; // u y v están en arboles distintos
+		} else if (representantOfVertex[u] == UNDEFINED) res = UNDEFINED; // u y v estan en arboles distintos
 		else res = distanceFromRoot[v] + distanceInTheCycle(rootOfV, rootOfU);
 		
 		return res;

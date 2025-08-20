@@ -7,8 +7,8 @@ using ordered_multiset = tree<
     tree_order_statistics_node_update
 >;
 
-// Segment tree donde guardo los elementos de cada rango en los vértice de forma ordenada
-// Este segment tree te permite responder en un rango cuántos elementos k cumplen tq: x <= k <= y
+// Segment tree donde guardo los elementos de cada rango en los vertice de forma ordenada
+// Este segment tree te permite responder en un rango cuantos elementos k cumplen tq: x <= k <= y
 
 struct SegmentTree{
     int n;
@@ -28,7 +28,7 @@ struct SegmentTree{
         return res;
     }
 
-    void build(int v, int tl, int tr){ // Vértice actual y rango [tl, tr] que indica este vértice
+    void build(int v, int tl, int tr){ // Vertice actual y rango [tl, tr] que indica este vertice
         forsn(i, tl, tr+1) B[v].insert({A[i], i});
         if (tl < tr) {
             int tm = (tl + tr)/2;

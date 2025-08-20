@@ -1,6 +1,6 @@
 // O(log(n)) por query o update.
-// Interpretación 1: Point update, range query.
-// Interpretación 2: Range update, point query.
+// Interpretacion 1: Point update, range query.
+// Interpretacion 2: Range update, point query.
 
 struct FenwickTree {
 	int n; vector<ll> bit;  // binary indexed tree (indexado desde 0)

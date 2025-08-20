@@ -10,7 +10,7 @@ bool toposort(vvi &ady, vi &orden){
 		}
 	}
 	
-	queue<int> q; // Si usamos min priority_queue podemos obtener el orden lexicografico más chico
+	queue<int> q; // Si usamos min priority_queue podemos obtener el orden lexicografico mas chico
 	forn(v, SIZE(ady)){
 		if(in_deg[v] == 0){
 			q.push(v);

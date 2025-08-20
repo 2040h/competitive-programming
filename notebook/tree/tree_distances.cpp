@@ -1,6 +1,6 @@
-// Máxima distancia desde cada vértice a otro
+// Maxima distancia desde cada vertice a otro
 // Supongo que adjList[v] solo contiene a los hijos y no al padre
-vector<priority_queue<int>> bestDepthsFrom(n); // Te dice las distancias de un vértice a las hojas de su árbol
+vector<priority_queue<int>> bestDepthsFrom(n); // Te dice las distancias de un vertice a las hojas de su arbol
 forn(i, n) bestDepthsFrom[i].push(0);
 
 void initializeMaxDepth(int v, int currentDepth){
@@ -20,7 +20,7 @@ void updateMaxDepth(){
         int v = q.front();
         q.pop();
 
-        if (v != 0 && SIZE(bestDepthsFrom[parent[v]]) > 1){ // Tengo dos opciones. Seleccionar el primer vértice más lejano a mi padre y unirme a su camino lo que da
+        if (v != 0 && SIZE(bestDepthsFrom[parent[v]]) > 1){ // Tengo dos opciones. Seleccionar el primer vertice mas lejano a mi padre y unirme a su camino lo que da
             int a = bestDepthsFrom[myParent].top();
             bestDepthsFrom[myParent].pop();
             if (a != maxDepthFrom[v] + 1) bestDepthsFrom[v].push(a+1);
@@ -35,7 +35,7 @@ void updateMaxDepth(){
 }
 
 // ##################################################################################3
-// La suma de las distancias de un vértice al resto. Esto calculado para todos los vértices
+// La suma de las distancias de un vertice al resto. Esto calculado para todos los vertices
 ll calculateSumDistancesFromRoot(int v, int currentDepth){
     ll res = 0;
     for (int u : adjList[v]) res += currentDepth + calculateSumDistancesFromRoot(u, currentDepth+1);

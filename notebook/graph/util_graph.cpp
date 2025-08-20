@@ -8,5 +8,5 @@ void buildPath(int start, int end){
 
     path.pb(start);
     dforn(i, SIZE(path)) cout << path[i] << " ";
-    cout << "\n"; // Si es un ciclo, printear de vuelta el start a lo último
+    cout << "\n"; // Si es un ciclo, printear de vuelta el start a lo ultimo
 }

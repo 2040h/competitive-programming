@@ -13,7 +13,6 @@ int rightBinarySearchForLCA(int start, int end, int v, int w, vector<vector<int>
             r = mid;
         }
     }
- 
     return l; // l es el ultimo elemento que cumple P(X)
 }
 

@@ -1,8 +1,6 @@
 using peso = ll;
 using indice_nodo = ll;
 using nodo_pesado = pair<peso, indice_nodo>;
- 
-// ############################################################### //
 
 // Devuelve el vector de distancias desde inicio al i-esimo vertice.
 vector<ll> dijkstra(indice_nodo inicio, vector<vector<nodo_pesado>> &ady){

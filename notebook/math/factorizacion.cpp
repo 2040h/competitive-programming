@@ -1,4 +1,4 @@
-// Factorizar un número n, cuesta calcular la # de primos <= sqrt(n)
+// Factorizar un numero n, cuesta calcular la # de primos <= sqrt(n)
 // Hay que llamar a la criba de eratostenes antes (con la cota correcta de primos calculados)
 vector<pair<ll, int>> factorizar_primos(ll a){
     vector<pair<ll, int>> factorizacion_primos;
@@ -14,12 +14,12 @@ vector<pair<ll, int>> factorizar_primos(ll a){
 		if (potencia > 0) factorizacion_primos.pb({p, potencia});
 	}
         
-    if (a != 1) factorizacion_primos.pb({a, 1}); // Si no es 1 después de haberlo dividido por los primos de hasta sqrt(a), entonces es un primo > sqrt(a) de potencia 1
+    if (a != 1) factorizacion_primos.pb({a, 1}); // Si no es 1 despues de haberlo dividido por los primos de hasta sqrt(a), entonces es un primo > sqrt(a) de potencia 1
     return factorizacion_primos;
 }
 
 // ###############################################################################3
-// Factorización en primos con linear sieve
+// Factorizacion en primos con linear sieve
 
 set<ll> factores_primos(int x){
     set<ll> res;

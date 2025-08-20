@@ -4,7 +4,7 @@ struct InclusionExclusion{
 
     InclusionExclusion(ll K, ll N, vl &a) : k(K), n(N), A(a) {}
 
-    // Quiero ver la # elementos que cumplen P(x) en la unión de los conjuntos: A[0], A[1], ..., A[k-1]
+    // Quiero ver la # elementos que cumplen P(x) en la union de los conjuntos: A[0], A[1], ..., A[k-1]
     int amountOfSets(ll mask){
         int res = 0;
         while (mask > 0){

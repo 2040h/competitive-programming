@@ -52,7 +52,7 @@ vector<int> getCycle(){
 // ###########################################################################
 // Algoritmos para grafos dirigidos
 
-// Acá devuelve ciclos de longitud 2
+// Aca devuelve ciclos de longitud 2
 int findCycle(int v){
     visited[v] = VISITANDO;
     

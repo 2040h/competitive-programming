@@ -19,14 +19,14 @@ char c; isupper(c); isdigit(c);
 // ######################################################################
 // Otros
 int myint1 = stoi(myString); // Funciona con int y float.
-*S.rbegin(); // Elemento más grande de un set
+*S.rbegin(); // Elemento mas grande de un set
 M.erase(it); // Borrar siempre en un multiset (y en general) usando un iterador para no borrar todas las apariciones
-sort(all(A), greater()); // Para ordenar un vector, llamar a una función bool
+sort(all(A), greater()); // Para ordenar un vector, llamar a una funcion bool
 *max_element(all(A)); *min_element(all(A)); 
 
 
 // Suma de: M[a] + ... + M[b]
-int getSumBetween(int a, int b){ // Notar que prefixSum tiene tamaño |M| + 1
+int getSumBetween(int a, int b){ // Notar que prefixSum tiene tamano |M| + 1
     if (a > b || a < 0 || b >= SIZE(prefixSum)-1) return UNDEFINED;
     return prefixSum[b+1] - prefixSum[a];
 }

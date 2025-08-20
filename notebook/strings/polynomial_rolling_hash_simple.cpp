@@ -22,7 +22,7 @@ private:
 };
 
 // ######################################################################################################
-// Implementación alternativa
+// Implementacion alternativa
 
 powers.resize(maxPower+1, 1); invPowers.resize(maxPower+1, 1);
 forsn(i, 1, maxPower+1) powers[i] = mulMod(powers[i-1], p, m);

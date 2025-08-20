@@ -10,7 +10,7 @@ struct SegmentTreeLazy{
         build(1, 0, n-1);
     }
 
-    void build(int v, int tl, int tr){ // Vértice actual y rango [tl, tr] que indica este vértice
+    void build(int v, int tl, int tr){ // Vertice actual y rango [tl, tr] que indica este vertice
         if (tl == tr) B[v] = A[tl]; // Cuando llego a una hoja, el valor es el mismo elemento
         else {
             int tm = (tl + tr)/2;

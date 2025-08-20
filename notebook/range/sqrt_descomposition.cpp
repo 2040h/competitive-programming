@@ -29,7 +29,7 @@ struct SqrtDescomposition{
 			forsn(i, indexOfL, indexOfR+1) // Proceso el intervalo del bloque particular
 		} else {
 			forsn(i, indexOfL, SIZE(descompositionOfA[blockOfL])) // Itero primer bloque
-			forn(i, indexOfR+1) // Itero último bloque
+			forn(i, indexOfR+1) // Itero ultimo bloque
 			forsn(i, blockOfL+1, blockOfR) // Itero entre los bloques
 		}
 	}

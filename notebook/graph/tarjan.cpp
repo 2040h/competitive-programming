@@ -22,7 +22,7 @@ struct Tarjan{
 			
 			if (!visited[w]) {
 				dfs(w, currentTime+1, v);
-                // Quiere decir que w no llegó a v ni a ninguno de sus ancestros
+                // Quiere decir que w no llego a v ni a ninguno de sus ancestros
 				if (foundAt[v] < minTimeFound[w]) bridges.pb({v, w});
 			}
             

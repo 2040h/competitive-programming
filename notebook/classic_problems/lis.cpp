@@ -16,7 +16,7 @@ int calcular_LIS(vector<int> &valores){
 	return SIZE(lis);
 }
 
-// Calcula la LIS de un árbol que termina en un vértice dado
+// Calcula la LIS de un arbol que termina en un vertice dado
 int binary_search(vector<int>& A, int i, int j, int k){
     if (i >= j) return j;
  

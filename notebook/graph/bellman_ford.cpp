@@ -1,22 +1,15 @@
-using peso = ll;
-using indice_nodo = ll;
-using nodo_pesado = pair<peso, indice_nodo>;
-
 struct Edge {
     ll a, b, cost;
-
     Edge(ll desde, ll hasta, ll c) : a(desde), b(hasta), cost(c) {}
 };
 
-// ############################################################### //
-
-// Comentario importante: si queremos saber la distancia de inicio a un vértice particular llamado destino tenemos que haber modificado al grafo G original.
-// Hay que correr un DFS desde G^T empezando desde destino para poder detectar todos los vértices que son alcanzables desde este y solo agregar las aristas de dichos vértices a nuestro edges
+// Comentario importante: si queremos saber la distancia de inicio a un vertice particular llamado destino tenemos que haber modificado al grafo G original.
+// Hay que correr un DFS desde G^T empezando desde destino para poder detectar todos los vertices que son alcanzables desde este y solo agregar las aristas de dichos vertices a nuestro edges
 // Esto es para ignorar los ciclos negativos que no pertenecen a ningun recorrido desde inicio a destino
 
 // Asume grafo representado como lista de aristas.
 
-bool bellman_ford(ll n, indice_nodo inicio, vector<Edge> &edges, vector<peso> &dist){
+bool bellman_ford(ll n, indice_nodo inicio, vector<Edge> &edges, vector<ll> &dist){
     // Devuelve true sii existe un ciclo de longitud negativa.
     // Calcula SSSP en dist.
  

@@ -1,4 +1,4 @@
-// Segment tree básico para point update y range query de suma
+// Segment tree basico para point update y range query de suma
 
 struct SegmentTree{
     int n;
@@ -13,7 +13,7 @@ struct SegmentTree{
     ll combine(ll x, ll y){ return x + y;}
     ll make_data(ll x){ return x;}
 
-    void build(int v, int tl, int tr){ // Vértice actual y rango [tl, tr] que indica este vértice
+    void build(int v, int tl, int tr){ // Vertice actual y rango [tl, tr] que indica este vertice
         if (tl == tr) B[v] = make_data(A[tl]); // Cuando llego a una hoja, el valor es el mismo elemento
         else {
             int tm = (tl + tr)/2;

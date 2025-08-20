@@ -1,4 +1,4 @@
-// Versión con BFS
+// Version con BFS
 
 int diameterVertex;
 
@@ -39,7 +39,7 @@ int diameterTree(){
 }
 
 // ###################################################################################################
-// Versión con DP
+// Version con DP
 void dfs(int v, int currentParentOfV){
     vector<int> branchsLength;
     
@@ -50,7 +50,7 @@ void dfs(int v, int currentParentOfV){
     }
 
     longestBranchFrom[v] = 0;
-    sort(all(branchsLength)); // Esto se puede hacer en O(n) buscando los dos máximos 
+    sort(all(branchsLength)); // Esto se puede hacer en O(n) buscando los dos maximos 
     if (SIZE(branchsLength) > 0) longestBranchFrom[v] = 1 + branchsLength[SIZE(branchsLength)-1];
     if (SIZE(branchsLength) > 1) longestPathThrough[v] = branchsLength[SIZE(branchsLength)-1] + 2 + branchsLength[SIZE(branchsLength)-2];
     lengthDiameter = max(lengthDiameter, max(longestBranchFrom[v], longestPathThrough[v]));

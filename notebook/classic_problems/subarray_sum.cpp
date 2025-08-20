@@ -25,7 +25,7 @@ ll maximumSubArraySum(vector<ll> &A){
     int n = SIZE(A);
 
     if (n == 1) return A[0];
-    else if (n == 0) return NEG_INF; // Esto es para no permitir array vacío
+    else if (n == 0) return NEG_INF; // Esto es para no permitir array vacio
 
     int middle = n/2;
     vector<ll> left, right;
@@ -45,4 +45,3 @@ ll maximumSubArraySum(int i, vector<ll> &A, vector<ll> &memo){
     if (memo[i] == UNDEFINED) memo[i] = max(A[i], A[i] + maximumSubArraySum(i-1, A, memo));
     return memo[i];
 } // res = max(memo[j]) para todo 0 <= j <= SIZE(A)-1
-

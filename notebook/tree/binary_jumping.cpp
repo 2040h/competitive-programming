@@ -38,7 +38,7 @@ struct BinaryJumping{
 };
 
 // #############################################################################################################
-// Implementación alternativa
+// Implementacion alternativa
 
 vector<vector<int>> memoAncestors(SIZE(adjList), vector<int>(log2(SIZE(adjList))+1, UNDEFINED));
 
@@ -97,7 +97,7 @@ int findTheAncestorFor(int v, int numberOfJumps, vector<vector<int>> &memoAncest
     int currentNode = v;
     int k = SIZE(memoAncestors[0]);
     
-	if (levelToFind < 0) return UNDEFINED; // Si te excediste del árbol, indefinite
+	if (levelToFind < 0) return UNDEFINED; // Si te excediste del arbol, indefinite
 
     while (currentLevel != levelToFind){
         int bestNewLevel = rightBinarySearch(0, k-1, currentNode, levelToFind, memoAncestors);
