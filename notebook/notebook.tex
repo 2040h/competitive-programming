@@ -40,6 +40,8 @@
 \cppfile{classic_problems/dp_optimization.cpp}
 \subsection{LIS}
 \cppfile{classic_problems/lis.cpp}
+\subsection{LCS}
+\cppfile{classic_problems/lcs.cpp}
 \subsection{Meeting in the middle}
 \cppfile{classic_problems/meeting_in_the_middle.cpp}
 \subsection{Sliding window}
@@ -142,6 +144,8 @@
 \cppfile{math/cambio_base.cpp}
 \subsection{Factorizacion}
 \cppfile{math/factorizacion.cpp}
+\subsection{Pollard Rho}
+\cppfile{math/pollard_rho.cpp}
 \subsection{Inclusion-exclusion}
 \cppfile{math/inclusion_exclusion.cpp}
 \subsection{Integrador Numerico Simpson}
@@ -177,6 +181,12 @@
 \subsection{Plane}
 \cppfile{geometry/plane.cpp}
 
+\section{Sorting}
+\subsection{Merge sort}
+\cppfile{sorting/mergeSort.cpp}
+\subsection{Custom sorting}
+\cppfile{sorting/customSorting.cpp}
+
 \section{Other}
 \subsection{Enumerar abecedario}
 \cppfile{other/enumerar_abecedario.cpp}
@@ -184,7 +194,6 @@
 \cppfile{other/epsilon_comparador.cpp}
 \subsection{Funciones utiles}
 \cppfile{other/funciones_utiles.cpp}
-
 
 \section{Complejidades}
 Aproximación del mayor número n de datos que pueden procesarse para cada una de las complejidades algoritmicas. Tomar esta tabla solo como referencia.
@@ -209,5 +218,30 @@ $O(1)$ \> -\\
 \section{Compilacion}
 \textbf{g++ archivo.cpp \&\& ./a.out}
 
+\begin{verbatim}
+Ejecutar por terminal interactiva:
+"./%e"
+Ejecutar por archivo in, out:
+> "%e".out; for x in "./%e"*.in ; do echo "$(basename "$x")" 
+>> "%e".out ; "./%e" < "$x" >> "%e".out 2>&1 ;
+echo "==========================" >> "%e".out ; done
+
+F8:
+g++ -std=gnu++17 -g -O2 -Wconversion -Wshadow -Wall
+-Wextra -D_GLIBCXX_DEBUG -c "%f"
+F9:
+g++ -std=gnu++17 -g -O2 -Wconversion -Wshadow -Wall
+-Wextra -D_GLIBCXX_DEBUG -o "%e" "%f"
+
+Tools > Plugin Manager > File browser y auto-close
+Toggle sidebar F3
+
+gdb ./main
+run
+[input manual]
+where
+
+run <main2.in
+\end{verbatim}
 
 \end{document}

@@ -21,7 +21,7 @@ private:
 	vector<ll> prefix_hash, potencia;
 };
 
-// ######################################################################################################
+// ############################################################### //
 // Implementacion alternativa
 
 powers.resize(maxPower+1, 1); invPowers.resize(maxPower+1, 1);

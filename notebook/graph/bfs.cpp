@@ -1,5 +1,4 @@
 // Algoritmos para Grafos simples
-
 void bfs(int v){
     visited[v] = true;
     queue<int> q;
@@ -33,7 +32,7 @@ bool isBipartite(int v){
     return true;
 }
 
-// ###########################################################################
+// ############################################################### //
 // Algoritmos para grafos dirigidos
 
 void bfs(int v){

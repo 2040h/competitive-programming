@@ -49,7 +49,7 @@ vector<int> getCycle(){
     return cycle;
 }
 
-// ###########################################################################
+// ############################################################### //
 // Algoritmos para grafos dirigidos
 
 // Aca devuelve ciclos de longitud 2
