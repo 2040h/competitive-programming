@@ -1,4 +1,4 @@
-// PI_S​[i] := max{k | 1<=k<i and S[0:k−1] = S[i−(k−1):i]}
+// PI_S[i] := max{k | 1<=k<i and S[0:k-1] = S[i-(k-1):i]}
 vi prefix_function_kmp(const string &s) {
 	int n = SIZE(s); vi pi_s(n);
 	for (int i=1, j=0; i<n; i++) {

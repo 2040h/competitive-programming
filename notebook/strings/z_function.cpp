@@ -1,4 +1,4 @@
-// z_S​[i] := max{k | 1<=k and S[0:k−1] = S[i:i+k−1]}
+// Z_S[i] := max{k | 1<=k and S[0:k-1] = S[i:i+k-1]}
 vi z_function(const string &s) {
 	int n = SIZE(s); vi z_S(n);
 	for (int i=1, l=0, r=0; i<n; i++) {
