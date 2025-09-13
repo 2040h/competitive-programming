@@ -31,3 +31,8 @@
 
 ## ESTRUCTURAS DE DATOS
 - Si tengo un segment tree, y busco el primer elemento que cumple `P(x)`, chequear que si en `query` llego a un intervalo de tamaño 1, asegurarme que el elemento cumpla la propiedad.
+
+## TIPOS DE DATOS
+- `int`: $[-2*10^9, 2*10^9]$
+- `ll`: $[-9*10^{18}, 9*10^{18}]$
+- `__int128_t`: $[-10^{38}, 10^{38}]$

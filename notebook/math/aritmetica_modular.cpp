@@ -1,5 +1,6 @@
 ll mod(ll a, ll m = MOD){
-	ll res = ((a % m) + m) % m;
+	ll res = a % m;
+    if (res < 0) res += m;
 	return res;
 }
 
