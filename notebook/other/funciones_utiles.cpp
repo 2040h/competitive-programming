@@ -1,3 +1,7 @@
+// Leer/escribir archivos externos
+freopen("prueba.in", "r", stdin);
+freopen("prueba.out", "w", stdout);
+
 // Input/Output
 cout << fixed << setprecision(1); // Imprimir con 1 decimal
 cout << setprecision(numeric_limits<long double>::digits10 + 1); // Muestra con full precision para ld

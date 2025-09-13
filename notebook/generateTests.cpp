@@ -1,9 +1,6 @@
 int main() {
     ios :: sync_with_stdio(0);
     cin.tie(0);
-	
-    //freopen("prueba.in", "r", stdin);
-	freopen("prueba.txt", "w", stdout);
 
 	int t = 50; // Assign the number of tests that you want
 	cout << t << "\n";
