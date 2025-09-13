@@ -15,6 +15,8 @@
 - Si `memo[i][j] = UNDEFINED`, fijarse que `memo[i][j]` nunca pueda valer `-1`
 - Si uso un `map` o `unordered_map`, chequear de no estar definiendo keys de más cuando hago una consulta estilo `M[key]`
 - Usar un `set` en lugar de un `unordered_set` cuando no me importa el orden
+- Si con `binary_search` busco un intervalo de elementos que el primer elemento sea `>= v1` y el último sea `<= v2`, tengo que chequear que encontrados `i, j` cumplan que: `i <= j` 
+- Si tengo un `WA` y la lógica del código parece ser correcta, llenar el código de `asserts` de todo lo que se debe cumplir por más obvio que parezca (hubo muchos WA por ignorar esto)
 
 ## SUGERENCIAS
 - Si estoy haciendo uso de una variable `j` como indice de un vector pero solo la uso para agregar elementos en un orden especifico, entonces conviene hacer `.pb()`. Esto es para ahorrar posibles bugs con el tema de ir incrementando `j`. Además, deja un código más legible.
