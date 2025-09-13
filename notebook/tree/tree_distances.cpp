@@ -34,7 +34,7 @@ void updateMaxDepth(){
     }
 }
 
-// ##################################################################################3
+// ############################################################### //
 // La suma de las distancias de un vertice al resto. Esto calculado para todos los vertices
 ll calculateSumDistancesFromRoot(int v, int currentDepth){
     ll res = 0;

@@ -38,7 +38,7 @@ int diameterTree(){
     return diameterLength;
 }
 
-// ###################################################################################################
+// ############################################################### //
 // Version con DP
 void dfs(int v, int currentParentOfV){
     vector<int> branchsLength;

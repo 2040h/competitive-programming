@@ -37,7 +37,7 @@ struct BinaryJumping{
 	
 };
 
-// #############################################################################################################
+// ############################################################### //
 // Implementacion alternativa
 
 vector<vector<int>> memoAncestors(SIZE(adjList), vector<int>(log2(SIZE(adjList))+1, UNDEFINED));
