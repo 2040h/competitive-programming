@@ -10,7 +10,8 @@ struct DisjointSetWithRollback{
     }
 
     int findSet(int x){
-		return x == parent[x] ? x : findSet(parent[x]);
+		while(x != parent[x]) x = parent[x];
+		return x;
     }
 
     void unionSet(int x, int y){
