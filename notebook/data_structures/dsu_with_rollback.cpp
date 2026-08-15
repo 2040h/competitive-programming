@@ -1,12 +1,11 @@
-struct DisjointSetWithRollback{
+struct DisjointSetRollback{
 	struct Change {int child, parent, oldParentSize;};
 	
-    vi parent, sz;
-    int numOfComponents;
+    vi parent, sz; int comps;
     vector<Change> history;
 
-    DisjointSetWithRollback(int n) : sz(n, 1), numOfComponents(n){
-        forn(i, n) {parent.pb(i);}
+    DisjointSetRollback(int n) : parent(n), sz(n, 1), comps(n){
+        iota(all(parent), 0);
     }
 
     int findSet(int x){
@@ -23,7 +22,7 @@ struct DisjointSetWithRollback{
 		
 		parent[y] = x;
 		sz[x] += sz[y];	
-        numOfComponents--;
+        comps--;
     }
 
     bool same(int x, int y) {return findSet(x) == findSet(y);}
@@ -35,7 +34,7 @@ struct DisjointSetWithRollback{
 			Change c = history.back(); history.pop_back();
 			parent[c.child] = c.child;
 			sz[c.parent] = c.oldParentSize;
-			numOfComponents++;
+			comps++;
 		}
 	}
 };
