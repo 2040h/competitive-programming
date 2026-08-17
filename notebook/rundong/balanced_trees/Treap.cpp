@@ -1,8 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-#define dbg(x) cout << #x << " = " << (x) << endl;
-
-
 const int N = 1e7;
 int lch[N], rch[N];
 int key[N], cnt[N];
